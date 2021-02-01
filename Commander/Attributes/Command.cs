@@ -2,6 +2,9 @@ using System;
 
 namespace Commander.Attributes
 {
+    /// <summary>
+    /// Command attribute to specify that a method is a command within the framework.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Method)]
     public class Command : Attribute
     {

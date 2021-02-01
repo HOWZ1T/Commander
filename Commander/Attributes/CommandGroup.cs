@@ -2,6 +2,9 @@ using System;
 
 namespace Commander.Attributes
 {
+    /// <summary>
+    /// CommandGroup attribute to specify that a class is a 'group' for commands.
+    /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
     public class CommandGroup : Attribute
     {

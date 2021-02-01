@@ -48,5 +48,15 @@ namespace Commander.Tests
                 Assert.Equal($"test says: \"{val}\"", res);
             }
         }
+
+        [Theory]
+        [InlineData("1", "0", "1")]
+        [InlineData("2", "1", "1")]
+        [InlineData("3", "1", "2")]
+        public void TestCogCommandAdd(string expected, string a, string b)
+        {
+            var res = this.Run(new[] {"testprogram", "test", "add", a, b});
+            Assert.Equal(expected, res);
+        }
     }
 }

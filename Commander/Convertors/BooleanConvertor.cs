@@ -2,8 +2,16 @@ using System;
 
 namespace Commander.Convertors
 {
+    /// <summary>
+    /// An extension of the Convertor class to handle converting bool values.
+    /// </summary>
+    /// <see cref="Convertor"/>
     public class BooleanConvertor: Convertor
     {
+        /// <summary>
+        /// Attempts to convert the given string value to a bool.
+        /// </summary>
+        /// <seealso cref="Convertor.TryConvert(string,out object)"/>
         public override bool TryConvert(string val, out object res)
         {
             var result = base.TryConvert(typeof(bool), val, out res);

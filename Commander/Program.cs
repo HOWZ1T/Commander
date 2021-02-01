@@ -7,6 +7,9 @@ using Commander.Errors;
 
 namespace Commander
 {
+    /// <summary>
+    /// Program provides a class that encapsulates cogs and provides the ability to process a given command string.
+    /// </summary>
     public class Program
     {
         public readonly string Name;
@@ -20,6 +23,7 @@ namespace Commander
         {
             Utils.Debug("initializing program...");
             _cogs = new Dictionary<string, Cog>();
+            // Adding default convertors
             _convertors = new Dictionary<Type, Convertor>();
             _convertors.Add(typeof(bool),    new BooleanConvertor());
             _convertors.Add(typeof(byte),    new Convertor(typeof(byte)));
@@ -44,6 +48,10 @@ namespace Commander
                 );
         }
 
+        /// <summary>
+        /// Adds the given cog to the program.
+        /// </summary>
+        /// <param name="cog">The cog to register in the program.</param>
         public void Register(Cog cog)
         {
             var name = (IsCaseSensitive == true) ? cog.Name : cog.Name.ToLower();
@@ -52,6 +60,10 @@ namespace Commander
             Utils.Debug($"added cog: {name}");
         }
 
+        /// <summary>
+        /// Removes the given cog from the program.
+        /// </summary>
+        /// <param name="cog">The cog to remove from the program.</param>
         public void Deregister(Cog cog)
         {
             var name = (IsCaseSensitive == true) ? cog.Name : cog.Name.ToLower();
@@ -60,6 +72,11 @@ namespace Commander
             Utils.Debug($"removed cog: {name}");
         }
 
+        /// <summary>
+        /// Finds and returns a cog based on the given name.
+        /// </summary>
+        /// <param name="name">The name of the cog to find.</param>
+        /// <returns>The Cog if found, otherwise null</returns>
         public Cog GetCog(string name)
         {
             var n = (IsCaseSensitive) ? name : name.ToLower();
@@ -71,6 +88,11 @@ namespace Commander
             return null;
         }
 
+        /// <summary>
+        /// Determines whether or not a cog with the given name exists within the program.
+        /// </summary>
+        /// <param name="name">The name of the cog.</param>
+        /// <returns>A bool representing if the cog exists within the program.</returns>
         public bool HasCog(string name)
         {
             var n = (IsCaseSensitive) ? name : name.ToLower();
@@ -93,6 +115,12 @@ namespace Commander
             return null;
         }
         
+        /// <summary>
+        /// Processes the arguments and dispatches the input to the appropriate cog/command.
+        /// </summary>
+        /// <param name="args">The input arguments to the program.</param>
+        /// <returns>The result of the execution from the program based on the given input arguments.</returns>
+        /// <exception cref="ProgramError"></exception>
         private string DispatchCommand(string[] args)
         {
             var strArgs = "";
@@ -177,6 +205,11 @@ namespace Commander
             return result;
         }
         
+        /// <summary>
+        /// Processes and executes a command based on the input arguments.
+        /// </summary>
+        /// <param name="args">The input arguments to the program.</param>
+        /// <returns>The result of the execution from the program based on the given input arguments.</returns>
         public string Run(string[] args)
         {
             string result = "";

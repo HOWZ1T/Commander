@@ -7,6 +7,9 @@ using Commander.Errors;
 
 namespace Commander
 {
+    /// <summary>
+    /// Cog provides an class that encapsulates commands.
+    /// </summary>
     public class Cog
     {
         public readonly string Name;
@@ -130,24 +133,13 @@ namespace Commander
                     Commands.Add(cmdName, cmd);
                 }
             }
-
-
-            void PrintCmds(CommandObj cmd)
-            {
-                Utils.Debug(cmd.Name);
-                foreach (var commandObj in cmd.AllChildren())
-                {
-                    PrintCmds(commandObj);
-                }
-            }
-            
-            Utils.Debug($"Commands: ");
-            foreach (var c in Commands.Values)
-            {
-                PrintCmds(c);
-            }
         }
 
+        /// <summary>
+        /// Finds and returns a command based on the given name.
+        /// </summary>
+        /// <param name="name">The name of the command to find.</param>
+        /// <returns>The command if found otherwise null</returns>
         public CommandObj GetCommand(string name)
         {
             CommandObj FindCommand(CommandObj cmd, string cmdName)
@@ -176,8 +168,18 @@ namespace Commander
             return null;
         }
 
+        /// <summary>
+        /// Processes and executes the given input based on the command name and argument list.
+        /// </summary>
+        /// <param name="prog">The program that this cog belongs to.</param>
+        /// <param name="name">The name of the first specified command from the arguments.</param>
+        /// <param name="args">The rest of the arguments to pass along to the command, includes subcommands.</param>
+        /// <returns>A string containing the result of the execution.</returns>
+        /// <exception cref="CogError"></exception>
+        /// <seealso cref="CommandObj.Invoke"/>
         internal string Execute(Program prog, string name, string[] args)
         {
+            // process  the command(s) down the command tree.
             string InternalExecute(string iName, string[] cArgs)
             {
                 var next = "";

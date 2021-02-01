@@ -6,6 +6,9 @@ using Commander.Errors;
 
 namespace Commander
 {
+    /// <summary>
+    /// A internal representation of a command method.
+    /// </summary>
     public class CommandObj
     {
         public readonly string Name;
@@ -46,6 +49,11 @@ namespace Commander
             return _parent;
         }
 
+        /// <summary>
+        /// Generates the call string for the given command.
+        /// </summary>
+        /// <param name="cmd">The command for which to generate the call string.</param>
+        /// <returns>The call string for the given command.</returns>
         protected static string CallString(CommandObj cmd)
         {
             var names = new Stack<string>();
@@ -93,6 +101,14 @@ namespace Commander
             return Children.Values.ToArray();
         }
 
+        /// <summary>
+        /// Executes the command based on the given arguments.
+        /// </summary>
+        /// <param name="prog">The program this command belong to.</param>
+        /// <param name="args">The arguments to be passed to the command.</param>
+        /// <returns>A string containing the result of the execution of the command.</returns>
+        /// <exception cref="CommandError"></exception>
+        /// <seealso cref="Cog.Execute"/>
         public string Invoke(Program prog, string[] args)
         {
             if (!Invokable)

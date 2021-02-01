@@ -29,5 +29,11 @@ namespace Commander.Tests
         {
             return $"{Name} says: \"{message}\"";
         }
+
+        [Command]
+        public string Add(int a, int b)
+        {
+            return $"{(a + b).ToString()}";
+        }
     }
 }
