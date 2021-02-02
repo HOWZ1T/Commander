@@ -16,6 +16,8 @@ namespace Commander
         public readonly bool IsCaseSensitive;
         public readonly bool UseProgramNamePrefix;
 
+        public ISplitter Splitter;
+        
         private Dictionary<string, Cog> _cogs;
         private Dictionary<Type, Convertor> _convertors;
         
@@ -42,6 +44,7 @@ namespace Commander
             Name = name;
             IsCaseSensitive = isCaseSensitive;
             UseProgramNamePrefix = useProgramNamePrefix;
+            Splitter = new DefaultSplitter();
             Utils.Debug(
                     $"Program: {Name}\nIsCaseSensitive: {IsCaseSensitive.ToString()}" +
                     $"\nUseProgramNamePrefix: {UseProgramNamePrefix.ToString()}"
@@ -206,10 +209,11 @@ namespace Commander
         }
         
         /// <summary>
-        /// Processes and executes a command based on the input arguments.
+        /// Processes and executes the program based on the input arguments.
         /// </summary>
         /// <param name="args">The input arguments to the program.</param>
         /// <returns>The result of the execution from the program based on the given input arguments.</returns>
+        /// <seealso cref="Run(string)"/>
         public string Run(string[] args)
         {
             string result = "";
@@ -249,6 +253,17 @@ namespace Commander
             }
             
             return result;
+        }
+
+        /// <summary>
+        /// Processes and executes the program based on the input argument.
+        /// </summary>
+        /// <param name="str">The input string to the program.</param>
+        /// <returns>The result of the execution from the program based on the given input string.</returns>
+        /// <seealso cref="Run(string[])"/>
+        public string Run(string str)
+        {
+            return Run(Splitter.Split(str));
         }
     }
 }

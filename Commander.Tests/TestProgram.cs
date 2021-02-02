@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using Xunit;
 
 namespace Commander.Tests
@@ -57,6 +58,36 @@ namespace Commander.Tests
         {
             var res = this.Run(new[] {"testprogram", "test", "add", a, b});
             Assert.Equal(expected, res);
+        }
+
+        [Fact]
+        public void TestRunWithStr()
+        {
+            var res = Run("testprogram test add 10 100");
+            Assert.Equal("110", res);
+        }
+
+        [Theory]
+        [InlineData("hello world")]
+        [InlineData("Hello World!")]
+        [InlineData("\"Hello World!\"")]
+        [InlineData("....AQUA!")]
+        public void TestEcho(string data)
+        {
+            var runStr = "testprogram test echo ";
+            runStr = (data.Contains(' ')) ? $"{runStr}'{data}'" : $"{runStr}{data}";
+            var res = Run(runStr);
+            Assert.Equal(data, res);
+        }
+
+        [Theory]
+        [InlineData("www.google.com")]
+        [InlineData("www.github.com")]
+        public void TestPing(string url)
+        {
+            var res = Run($"testprogram test pinger {url}");
+            Utils.Debug(res);
+            Assert.Matches(new Regex(@"^[0-9]+\ ms$"), res);
         }
     }
 }

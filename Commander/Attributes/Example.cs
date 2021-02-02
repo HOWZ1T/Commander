@@ -13,6 +13,7 @@ namespace Commander.Attributes
          * @p = program name
          * @n = command name
          * @c = call string
+         * @u = usage
          */
         public readonly string Val;
 

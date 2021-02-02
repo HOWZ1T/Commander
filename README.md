@@ -9,11 +9,12 @@ Commander is a WIP Command framework to aid in the creation of command line tool
 - [x] Add argument preprocessor for commands ala discordpy ?
       E.g.: myFunc(string arg1, int arg2)
 - [x] Add code comments
-- [ ] Add unit tests (aim for 100% coverage)
+- [ ] Complete unit tests (aim for 100% coverage)
 - [x] Add code docs
 - [ ] Add examples
 - [ ] Prettify README.md
 - [ ] Add command usage info generation from metadata
 - [ ] Add special char parser to Example and Description test
-- [ ] Add input splitter to program.
+- [x] Add input splitter to program.
+- [ ] Add default help command.
 - This all could have gone in a project right?
