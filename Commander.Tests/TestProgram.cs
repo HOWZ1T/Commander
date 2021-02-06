@@ -40,7 +40,6 @@ namespace Commander.Tests
             if (i == 0)
             {
                 var res = this.Run(new[] {"testprogram", "test", "say"});  
-                Utils.Debug(res);
                 Assert.Equal("test says: \"Hello World\"", res);
             }
             else
@@ -86,26 +85,23 @@ namespace Commander.Tests
         public void TestPing(string url)
         {
             var res = Run($"testprogram test pinger {url}");
-            Utils.Debug(res);
             Assert.Matches(new Regex(@"^[0-9]+\ ms$"), res);
         }
 
         [Theory]
-        [InlineData("help")]
-        [InlineData("help help")]
-        [InlineData("test pinger")]
-        [InlineData("test echo")]
-        [InlineData("test add")]
-        [InlineData("test say")]
-        [InlineData("test")]
-        public void TestHelp(string cmdStr)
+        [InlineData("help", "help")]
+        [InlineData("help help", "help")]
+        [InlineData("test pinger", "pinger")]
+        [InlineData("test echo", "echo")]
+        [InlineData("test add", "add")]
+        [InlineData("test say", "say")]
+        [InlineData("test", "test")]
+        public void TestHelp(string cmdStr, string name)
         {
             var res = Run($"testprogram help {cmdStr}");
-            Utils.Debug(res);
-            
-            // TODO debug index out of range error
-            // TODO better assert statement
-            Assert.NotEmpty(res);
+
+            Assert.Contains($"[{name}]", res);
+            Assert.Contains("Description", res);
         }
     }
 }

@@ -17,5 +17,4 @@ Commander is a WIP Command framework to aid in the creation of command line tool
 - [x] Add special sequence parser
 - [x] Add input splitter to program
 - [x] Add default help command
-- [ ] Debug default help command
 - ~~This all could have gone in a project right?~~

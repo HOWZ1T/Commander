@@ -54,14 +54,14 @@ namespace Commander
 
             if (cmd.Examples.Length > 0)
             {
-                info.Append("\n\nExamples:");
+                info.Append("\n\nExamples:\n");
                 foreach (var example in cmd.Examples)
                 {
                     info.Append(example).Append('\n');
                 }
                 
                 // remove trailing \n char
-                info.Remove(info.Length - 1, info.Length);
+                info.Remove(info.Length - 1, 1);
             }
 
             return info.ToString();
@@ -99,7 +99,7 @@ namespace Commander
                 }
 
                 // remove trailing \n char
-                info.Remove(info.Length - 1, info.Length);
+                info.Remove(info.Length - 1, 1);
             }
             
             return info.ToString();

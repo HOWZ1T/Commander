@@ -153,7 +153,6 @@ namespace Commander
                 var cn = (IsCaseSensitive) ? cmdName : cmdName.ToLower();
                 var c = (IsCaseSensitive) ? cmd.Name : cmd.Name.ToLower();
 
-                Utils.Debug($"comparing: {c} vs {cn}");
                 if (c == cn) return cmd;
 
                 foreach (var child in cmd.AllChildren())

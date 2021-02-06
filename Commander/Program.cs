@@ -128,14 +128,6 @@ namespace Commander
         /// <exception cref="ProgramError"></exception>
         private string DispatchCommand(string[] args)
         {
-            var strArgs = "";
-            foreach (var arg in args)
-            {
-                strArgs += arg + ";";
-            }
-            strArgs = strArgs.Substring(0, strArgs.Length - 1);
-            
-            Utils.Debug($"dispatching command with args: {strArgs}");
             if (args.Length == 0)
             {
                 throw new ProgramError("No command given.");
@@ -186,7 +178,7 @@ namespace Commander
             {
                 var cogName = args[0];
                 Cog cg = GetCog(cogName);
-                List<CommandObj> cmds = new List<CommandObj>();
+                CommandObj cmd = null;
                 if (cg != null)
                 {
                     Utils.ShiftArgs(ref args);
@@ -194,28 +186,30 @@ namespace Commander
                     {
                         return Help.Help(this, cg);
                     }
-                    
-                    cmds.AddRange(cg.Commands.Values);
+
+                    cmd = cg.GetCommand(args.First());
                 }
-                else
+
+                // if cmd is still null, perform cog independent search
+                if (cmd == null)
                 {
+                    List<CommandObj> cmds = new List<CommandObj>();
                     foreach (var pair in _cogs)
                     {
                         cmds.AddRange(pair.Value.Commands.Values);
                     }
+                    cmd = cmds.Select(child => FindCommand(child, args.First())).FirstOrDefault();   
                 }
                 
-                CommandObj cmd = cmds.Select(c => FindCommand(c, args[0])).FirstOrDefault();
-
                 if (cmd == null)
                 {
                     // help was called on itself
-                    if (args[0] == "help" || args.Last() == "help")
+                    if (args.First() == "help" || args.Last() == "help")
                     {
                         return Help.Help();
                     }
                     
-                    throw new ProgramError($@"could not find any command called: {args[0]}");
+                    throw new ProgramError($@"could not find any command called: {args.First()}");
                 }
                 
                 return Help.Help(this, cmd);
@@ -225,7 +219,6 @@ namespace Commander
             Cog cog = GetCog(name);
             if (cog != null)
             {
-                Utils.Debug($"executing cog: {name} with args: {args.ToString()}");
                 result = cog.Execute(this, name, args);
             }
             else

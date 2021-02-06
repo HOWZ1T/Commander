@@ -126,7 +126,7 @@ namespace Commander
             {
                 // example: `cmd <name [string] [optional] [default: "Hello"]>`
                 var param = entry.Value;
-                usage.Append(" <").Append(param.Name).Append(" [").Append(param.ParameterType.ToString()).Append(']');
+                usage.Append(" <").Append(param.Name).Append(" [").Append(param.ParameterType.Name).Append(']');
 
                 if (param.IsOptional)
                 {
