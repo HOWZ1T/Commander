@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using Commander.Errors;
 
 namespace Commander
@@ -12,10 +13,11 @@ namespace Commander
     public class CommandObj
     {
         public readonly string Name;
-        public readonly string Description;
-        public readonly string[] Examples;
         public readonly bool Invokable;
         public readonly object _cog;
+        
+        public string Description;
+        public string[] Examples;
         
         private CommandObj _parent;
         private MethodInfo _methodInfo;
@@ -54,7 +56,7 @@ namespace Commander
         /// </summary>
         /// <param name="cmd">The command for which to generate the call string.</param>
         /// <returns>The call string for the given command.</returns>
-        protected static string CallString(CommandObj cmd)
+        public static string CallString(CommandObj cmd)
         {
             var names = new Stack<string>();
             while (cmd != null)
@@ -99,6 +101,60 @@ namespace Commander
         public CommandObj[] AllChildren()
         {
             return Children.Values.ToArray();
+        }
+
+        /// <summary>
+        /// Generates the usage string for this command.
+        /// </summary>
+        /// <param name="program">The program this command belongs to.</param>
+        /// <returns>The usage string for this command.</returns>
+        public String Usage(Program program)
+        {
+            StringBuilder usage = new StringBuilder();
+            var cmdName = (program.IsCaseSensitive) ? Name : Name.ToLower();
+            usage.Append(cmdName);
+            
+            // go through parameters
+            // start attempting to parse args based on function parameters
+            var parameterInfos = new SortedList<int, ParameterInfo>();
+            foreach (var parameterInfo in _methodInfo.GetParameters())
+            {
+                parameterInfos.Add(parameterInfo.Position, parameterInfo);
+            }
+
+            foreach (var entry in parameterInfos)
+            {
+                // example: `cmd <name [string] [optional] [default: "Hello"]>`
+                var param = entry.Value;
+                usage.Append(" <").Append(param.Name).Append(" [").Append(param.ParameterType.ToString()).Append(']');
+
+                if (param.IsOptional)
+                {
+                    usage.Append(" [optional]");
+                }
+
+                if (param.HasDefaultValue)
+                {
+                    usage.Append(" [default: ");
+                    if (param.ParameterType == typeof(string))
+                    {
+                        usage.Append('"');
+                    }
+
+                    usage.Append(param.DefaultValue.ToString());
+                    
+                    if (param.ParameterType == typeof(string))
+                    {
+                        usage.Append('"');
+                    }
+
+                    usage.Append(']');
+                }
+
+                usage.Append('>');
+            }
+
+            return usage.ToString();
         }
 
         /// <summary>

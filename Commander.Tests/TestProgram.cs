@@ -89,5 +89,23 @@ namespace Commander.Tests
             Utils.Debug(res);
             Assert.Matches(new Regex(@"^[0-9]+\ ms$"), res);
         }
+
+        [Theory]
+        [InlineData("help")]
+        [InlineData("help help")]
+        [InlineData("test pinger")]
+        [InlineData("test echo")]
+        [InlineData("test add")]
+        [InlineData("test say")]
+        [InlineData("test")]
+        public void TestHelp(string cmdStr)
+        {
+            var res = Run($"testprogram help {cmdStr}");
+            Utils.Debug(res);
+            
+            // TODO debug index out of range error
+            // TODO better assert statement
+            Assert.NotEmpty(res);
+        }
     }
 }

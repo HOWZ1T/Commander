@@ -25,7 +25,7 @@ namespace Commander
             IsCaseSensitive = prog.IsCaseSensitive;
             IsGroup = false;
             Commands = new Dictionary<string, CommandObj>();
-            
+         
             // process attributes
             // set name, description and IsGroup based on presence of attributes and variables
             var attr = this.GetType().GetCustomAttribute(typeof(CommandGroup));
@@ -33,7 +33,7 @@ namespace Commander
             {
                 var cmdGrp = attr as CommandGroup;
                 this.Name = (IsCaseSensitive) ? cmdGrp.Name.ToLower() : cmdGrp.Name;
-                this.Description = cmdGrp.Description;
+                this.Description = StringProcessor.Process(cmdGrp.Description, prog);
                 this.IsGroup = true;
                 Commands.Add(Name, new CommandObj(this, null, false, Name, Description, new string[] { }));
             }
@@ -54,7 +54,7 @@ namespace Commander
                 }
                 else
                 {
-                    this.Description = description;
+                    this.Description = StringProcessor.Process(description, prog);
                 }
             }
             
@@ -124,6 +124,12 @@ namespace Commander
                 }
 
                 CommandObj cmd = new CommandObj(this, parent, method, true, cmdName, attrib.Description, examples.ToArray());
+                cmd.Description = StringProcessor.Process(cmd.Description, prog, cmd);
+                for(int i = 0; i < cmd.Examples.Length; i++)
+                {
+                    cmd.Examples[i] = StringProcessor.Process(cmd.Examples[i], prog, cmd);
+                }
+                
                 if (group != null && parent == null)
                 {
                     group.AddChild(cmd);

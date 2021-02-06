@@ -17,6 +17,7 @@ namespace Commander
         public readonly bool UseProgramNamePrefix;
 
         public ISplitter Splitter;
+        public IHelp Help;
         
         private Dictionary<string, Cog> _cogs;
         private Dictionary<Type, Convertor> _convertors;
@@ -45,6 +46,7 @@ namespace Commander
             IsCaseSensitive = isCaseSensitive;
             UseProgramNamePrefix = useProgramNamePrefix;
             Splitter = new DefaultSplitter();
+            Help = new DefaultHelp();
             Utils.Debug(
                     $"Program: {Name}\nIsCaseSensitive: {IsCaseSensitive.ToString()}" +
                     $"\nUseProgramNamePrefix: {UseProgramNamePrefix.ToString()}"
@@ -169,6 +171,56 @@ namespace Commander
                 }
             }
 
+            // utility function for running the command tree
+            CommandObj FindCommand(CommandObj c, string cmdName)
+            {
+                var n = (IsCaseSensitive) ? c.Name : c.Name.ToLower();
+                var cn = (IsCaseSensitive) ? cmdName : cmdName.ToLower();
+                if (n == cn) return c;
+
+                return c.AllChildren().Select(child => FindCommand(child, cmdName)).FirstOrDefault();
+            }
+            
+            // handle help command
+            if (name == "help")
+            {
+                var cogName = args[0];
+                Cog cg = GetCog(cogName);
+                List<CommandObj> cmds = new List<CommandObj>();
+                if (cg != null)
+                {
+                    Utils.ShiftArgs(ref args);
+                    if (args.Length <= 0)
+                    {
+                        return Help.Help(this, cg);
+                    }
+                    
+                    cmds.AddRange(cg.Commands.Values);
+                }
+                else
+                {
+                    foreach (var pair in _cogs)
+                    {
+                        cmds.AddRange(pair.Value.Commands.Values);
+                    }
+                }
+                
+                CommandObj cmd = cmds.Select(c => FindCommand(c, args[0])).FirstOrDefault();
+
+                if (cmd == null)
+                {
+                    // help was called on itself
+                    if (args[0] == "help" || args.Last() == "help")
+                    {
+                        return Help.Help();
+                    }
+                    
+                    throw new ProgramError($@"could not find any command called: {args[0]}");
+                }
+                
+                return Help.Help(this, cmd);
+            }
+            
             string result = "";
             Cog cog = GetCog(name);
             if (cog != null)
@@ -180,15 +232,6 @@ namespace Commander
             {
                 Utils.Debug($"cog not found for name: {name}, attempting to find function...");
                 // attempt to find function
-
-                CommandObj FindCommand(CommandObj c, string cmdName)
-                {
-                    var n = (IsCaseSensitive) ? c.Name : c.Name.ToLower();
-                    var cn = (IsCaseSensitive) ? cmdName : cmdName.ToLower();
-                    if (n == cn) return c;
-
-                    return c.AllChildren().Select(child => FindCommand(child, cmdName)).FirstOrDefault();
-                }
 
                 List<CommandObj> cmds = new List<CommandObj>();
                 foreach (var pair in _cogs)
@@ -226,21 +269,21 @@ namespace Commander
             {
                 if (e is ProgramError)
                 {
-                    result += "Program Error: " + e.Message + "\nUse ";
+                    result += "Program Error: " + e.Message + "\nUse `";
                     if (UseProgramNamePrefix)
                     {
                         result += Name + " ";
                     }
-                    result += "help for more info.";
+                    result += "help` for more info.";
                 }
                 else if (e is CommandError)
                 {
-                    result += "Command Error: " + e.Message + "\nUse ";
+                    result += "Command Error: " + e.Message + "\nUse `";
                     if (UseProgramNamePrefix)
                     {
                         result += Name + " ";
                     }
-                    result += "help " + (e as CommandError).CallString + " for more info.";
+                    result += "help " + (e as CommandError).CallString + "` for more info.";
                 }
                 else if (e is AttributeError)
                 {
