@@ -7,4 +7,4 @@ install:
 
 script:
   - msbuild /p:Configuration=Release Commander.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./Commander.Tests/bin/Release/Commander.Tests.dll
+  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./Commander.Tests/bin/Release/net5.0/Commander.Tests.dll
