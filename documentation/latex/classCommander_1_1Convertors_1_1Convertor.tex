@@ -1,0 +1,148 @@
+\hypertarget{classCommander_1_1Convertors_1_1Convertor}{}\doxysection{Commander.\+Convertors.\+Convertor Class Reference}
+\label{classCommander_1_1Convertors_1_1Convertor}\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+
+
+A generic implementation of the  
+
+
+
+
+Inheritance diagram for Commander.\+Convertors.\+Convertor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{classCommander_1_1Convertors_1_1Convertor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Commander.\+Convertors.\+Convertor\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{classCommander_1_1Convertors_1_1Convertor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor_a051ca6b4ab68380a974642c6c507c337}{Convertor}} ()
+\item 
+\mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor_a7877dc0543e491e898202d130b45be97}{Convertor}} (Type typ)
+\item 
+virtual bool \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor_abb20ffda361a53db5dd36a08a2387d69}{Try\+Convert}} (Type typ, string val, out object res)
+\begin{DoxyCompactList}\small\item\em Attempts to convert the given string value to the given type value. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor_ae37f08d17c3bf242f25365bf702fc881}{Try\+Convert}} (string val, out object res)
+\begin{DoxyCompactList}\small\item\em Attempts to convert the given string value to the generic type \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor_abcfaf52a3f3e21f1894103de437a68e0}{Try\+Generic\+Convert}} (Type typ, string val, out object res)
+\begin{DoxyCompactList}\small\item\em Generic convertor that can handle all primitive types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Type \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor_a662d5ffce342e8ebd28d7234afed4432}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A generic implementation of the 
+
+{\ttfamily \mbox{\hyperlink{interfaceCommander_1_1Convertors_1_1IConvertor}{I\+Convertor}}} interface.
+
+\begin{DoxySeeAlso}{See also}
+I\+Convertor$<$\+T$>$
+
+
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommander_1_1Convertors_1_1Convertor_a051ca6b4ab68380a974642c6c507c337}\label{classCommander_1_1Convertors_1_1Convertor_a051ca6b4ab68380a974642c6c507c337}} 
+\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}!Convertor@{Convertor}}
+\index{Convertor@{Convertor}!Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+\doxysubsubsection{\texorpdfstring{Convertor()}{Convertor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Commander.\+Convertors.\+Convertor.\+Convertor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1Convertors_1_1Convertor_a7877dc0543e491e898202d130b45be97}\label{classCommander_1_1Convertors_1_1Convertor_a7877dc0543e491e898202d130b45be97}} 
+\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}!Convertor@{Convertor}}
+\index{Convertor@{Convertor}!Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+\doxysubsubsection{\texorpdfstring{Convertor()}{Convertor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Commander.\+Convertors.\+Convertor.\+Convertor (\begin{DoxyParamCaption}\item[{Type}]{typ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_1_1Convertors_1_1Convertor_ae37f08d17c3bf242f25365bf702fc881}\label{classCommander_1_1Convertors_1_1Convertor_ae37f08d17c3bf242f25365bf702fc881}} 
+\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}!TryConvert@{TryConvert}}
+\index{TryConvert@{TryConvert}!Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+\doxysubsubsection{\texorpdfstring{TryConvert()}{TryConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool Commander.\+Convertors.\+Convertor.\+Try\+Convert (\begin{DoxyParamCaption}\item[{string}]{val,  }\item[{out object}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to convert the given string value to the generic type 
+
+{\ttfamily T} which is of type {\ttfamily object} in this class.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{interfaceCommander_1_1Convertors_1_1IConvertor_a2a774df995cc444090902d44757b276e}{I\+Convertor$<$\+T$>$.\+Try\+Convert(string,out T)}}
+
+
+\end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classCommander_1_1Convertors_1_1BooleanConvertor_a86006604029515c989c7488d2eaa153c}{Commander.\+Convertors.\+Boolean\+Convertor}}.
+
+\mbox{\Hypertarget{classCommander_1_1Convertors_1_1Convertor_abb20ffda361a53db5dd36a08a2387d69}\label{classCommander_1_1Convertors_1_1Convertor_abb20ffda361a53db5dd36a08a2387d69}} 
+\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}!TryConvert@{TryConvert}}
+\index{TryConvert@{TryConvert}!Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+\doxysubsubsection{\texorpdfstring{TryConvert()}{TryConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool Commander.\+Convertors.\+Convertor.\+Try\+Convert (\begin{DoxyParamCaption}\item[{Type}]{typ,  }\item[{string}]{val,  }\item[{out object}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to convert the given string value to the given type value. 
+
+\begin{DoxySeeAlso}{See also}
+I\+Convertor$<$\+T$>$.\+Try\+Convert(\+System.\+Type,string,out T)
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classCommander_1_1Convertors_1_1Convertor_abcfaf52a3f3e21f1894103de437a68e0}\label{classCommander_1_1Convertors_1_1Convertor_abcfaf52a3f3e21f1894103de437a68e0}} 
+\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}!TryGenericConvert@{TryGenericConvert}}
+\index{TryGenericConvert@{TryGenericConvert}!Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+\doxysubsubsection{\texorpdfstring{TryGenericConvert()}{TryGenericConvert()}}
+{\footnotesize\ttfamily static bool Commander.\+Convertors.\+Convertor.\+Try\+Generic\+Convert (\begin{DoxyParamCaption}\item[{Type}]{typ,  }\item[{string}]{val,  }\item[{out object}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Generic convertor that can handle all primitive types. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em typ} & The type to convert to.\\
+\hline
+{\em val} & The string value to convert from.\\
+\hline
+{\em res} & The resulting value of the conversion.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool representing the success of the attempted conversion.
+\end{DoxyReturn}
+Try\+Convert(\+System.\+Type,string,out object) 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommander_1_1Convertors_1_1Convertor_a662d5ffce342e8ebd28d7234afed4432}\label{classCommander_1_1Convertors_1_1Convertor_a662d5ffce342e8ebd28d7234afed4432}} 
+\index{Commander.Convertors.Convertor@{Commander.Convertors.Convertor}!\_type@{\_type}}
+\index{\_type@{\_type}!Commander.Convertors.Convertor@{Commander.Convertors.Convertor}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily readonly Type Commander.\+Convertors.\+Convertor.\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\+Convertors/\mbox{\hyperlink{Convertor_8cs}{Convertor.\+cs}}\end{DoxyCompactItemize}

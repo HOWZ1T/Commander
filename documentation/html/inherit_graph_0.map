@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,64,84,91"/>
+<area shape="rect" id="node2" href="$classCommander_1_1Attributes_1_1Command.html" title="Command attribute to specify that a method is a command within the framework." alt="" coords="132,5,372,32"/>
+<area shape="rect" id="node3" href="$classCommander_1_1Attributes_1_1CommandGroup.html" title="CommandGroup attribute to specify that a class is a &#39;group&#39; for commands." alt="" coords="132,57,372,98"/>
+<area shape="rect" id="node4" href="$classCommander_1_1Attributes_1_1Example.html" title="Example attribute for generating example strings for the method it applies to." alt="" coords="137,123,367,149"/>
+</map>

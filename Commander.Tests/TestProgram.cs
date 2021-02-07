@@ -1,16 +1,15 @@
-using System;
 using System.Text.RegularExpressions;
 using Xunit;
 
 namespace Commander.Tests
 {
-    public class TestProgram : Commander.Program
+    public class TestProgram : Program
     {
         public TestProgram() : base("TestProgram")
         {
             Register(new TestCog(this));
         }
-        
+
         [Fact]
         public void TestProgramCreationAndCogCreationAndRegister()
         {
@@ -20,12 +19,12 @@ namespace Commander.Tests
             Assert.False(prog.IsCaseSensitive);
             Assert.True(prog.UseProgramNamePrefix);
 
-            Cog c = GetCog("test");
+            var c = GetCog("test");
             Assert.Equal("yeah yeah", c.Description);
             Assert.Equal("test", c.Name);
-            Assert.Equal(this.IsCaseSensitive, c.IsCaseSensitive);
+            Assert.Equal(IsCaseSensitive, c.IsCaseSensitive);
             Assert.True(c.IsGroup);
-            Assert.Equal(new string[]{"test"}, c.Commands.Keys);
+            Assert.Equal(new[] {"test"}, c.Commands.Keys);
             Assert.NotNull(c.GetCommand("Say"));
             Assert.NotNull(c.GetCommand("pinger"));
             Assert.NotNull(c.GetCommand("Echo"));
@@ -39,12 +38,12 @@ namespace Commander.Tests
         {
             if (i == 0)
             {
-                var res = this.Run(new[] {"testprogram", "test", "say"});  
+                var res = Run(new[] {"testprogram", "test", "say"});
                 Assert.Equal("test says: \"Hello World\"", res);
             }
             else
             {
-                var res = this.Run(new[] {"testprogram", "test", "say", val});
+                var res = Run(new[] {"testprogram", "test", "say", val});
                 Assert.Equal($"test says: \"{val}\"", res);
             }
         }
@@ -55,7 +54,7 @@ namespace Commander.Tests
         [InlineData("3", "1", "2")]
         public void TestCogCommandAdd(string expected, string a, string b)
         {
-            var res = this.Run(new[] {"testprogram", "test", "add", a, b});
+            var res = Run(new[] {"testprogram", "test", "add", a, b});
             Assert.Equal(expected, res);
         }
 
@@ -74,7 +73,7 @@ namespace Commander.Tests
         public void TestEcho(string data)
         {
             var runStr = "testprogram test echo ";
-            runStr = (data.Contains(' ')) ? $"{runStr}'{data}'" : $"{runStr}{data}";
+            runStr = data.Contains(' ') ? $"{runStr}'{data}'" : $"{runStr}{data}";
             var res = Run(runStr);
             Assert.Equal(data, res);
         }
@@ -89,6 +88,7 @@ namespace Commander.Tests
         }
 
         [Theory]
+        [InlineData("", "help")]
         [InlineData("help", "help")]
         [InlineData("help help", "help")]
         [InlineData("test pinger", "pinger")]
@@ -98,8 +98,14 @@ namespace Commander.Tests
         [InlineData("test", "test")]
         public void TestHelp(string cmdStr, string name)
         {
-            var res = Run($"testprogram help {cmdStr}");
-
+            var args = "testprogram help";
+            if (cmdStr != "")
+            {
+                args += $" {cmdStr}";
+            }
+            
+            var res = Run(args);
+            Utils.Debug(res);
             Assert.Contains($"[{name}]", res);
             Assert.Contains("Description", res);
         }

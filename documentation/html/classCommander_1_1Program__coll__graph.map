@@ -1,0 +1,5 @@
+<map id="Commander.Program" name="Commander.Program">
+<area shape="rect" id="node1" title="Program provides a class that encapsulates cogs and provides the ability to process a given command s..." alt="" coords="80,95,240,121"/>
+<area shape="rect" id="node2" href="$interfaceCommander_1_1IHelp.html" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" id="node3" href="$interfaceCommander_1_1ISplitter.html" title=" " alt="" coords="169,5,325,32"/>
+</map>

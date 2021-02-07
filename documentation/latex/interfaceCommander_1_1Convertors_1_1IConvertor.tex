@@ -1,0 +1,86 @@
+\hypertarget{interfaceCommander_1_1Convertors_1_1IConvertor}{}\doxysection{Commander.\+Convertors.\+I\+Convertor$<$ T $>$ Interface Template Reference}
+\label{interfaceCommander_1_1Convertors_1_1IConvertor}\index{Commander.Convertors.IConvertor$<$ T $>$@{Commander.Convertors.IConvertor$<$ T $>$}}
+
+
+\mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}} interface to specify the Try\+Convert methods.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{interfaceCommander_1_1Convertors_1_1IConvertor_a72186b0d89b7195e0f5cb3161218b349}{Try\+Convert}} (Type typ, string val, out T res)
+\begin{DoxyCompactList}\small\item\em Attempts to convert the given string value to the given type value. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{interfaceCommander_1_1Convertors_1_1IConvertor_a2a774df995cc444090902d44757b276e}{Try\+Convert}} (string val, out T res)
+\begin{DoxyCompactList}\small\item\em Attempts to convert the given string value to the generic type \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}} interface to specify the Try\+Convert methods. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Generic Type\\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceCommander_1_1Convertors_1_1IConvertor_a2a774df995cc444090902d44757b276e}\label{interfaceCommander_1_1Convertors_1_1IConvertor_a2a774df995cc444090902d44757b276e}} 
+\index{Commander.Convertors.IConvertor$<$ T $>$@{Commander.Convertors.IConvertor$<$ T $>$}!TryConvert@{TryConvert}}
+\index{TryConvert@{TryConvert}!Commander.Convertors.IConvertor$<$ T $>$@{Commander.Convertors.IConvertor$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TryConvert()}{TryConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool \mbox{\hyperlink{interfaceCommander_1_1Convertors_1_1IConvertor}{Commander.\+Convertors.\+I\+Convertor}}$<$ T $>$.Try\+Convert (\begin{DoxyParamCaption}\item[{string}]{val,  }\item[{out T}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to convert the given string value to the generic type 
+
+{\ttfamily T}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The string value to convert from.\\
+\hline
+{\em res} & The resulting value of the conversion.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool representing the success of the attempted conversion.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{interfaceCommander_1_1Convertors_1_1IConvertor_a72186b0d89b7195e0f5cb3161218b349}\label{interfaceCommander_1_1Convertors_1_1IConvertor_a72186b0d89b7195e0f5cb3161218b349}} 
+\index{Commander.Convertors.IConvertor$<$ T $>$@{Commander.Convertors.IConvertor$<$ T $>$}!TryConvert@{TryConvert}}
+\index{TryConvert@{TryConvert}!Commander.Convertors.IConvertor$<$ T $>$@{Commander.Convertors.IConvertor$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TryConvert()}{TryConvert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool \mbox{\hyperlink{interfaceCommander_1_1Convertors_1_1IConvertor}{Commander.\+Convertors.\+I\+Convertor}}$<$ T $>$.Try\+Convert (\begin{DoxyParamCaption}\item[{Type}]{typ,  }\item[{string}]{val,  }\item[{out T}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Attempts to convert the given string value to the given type value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em typ} & The type to convert to.\\
+\hline
+{\em val} & The string value to convert from.\\
+\hline
+{\em res} & The resulting value of the conversion.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool representing the success of the attempted conversion.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\+Convertors/\mbox{\hyperlink{IConvertor_8cs}{I\+Convertor.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{classCommander_1_1DefaultHelp}{}\doxysection{Commander.\+Default\+Help Class Reference}
+\label{classCommander_1_1DefaultHelp}\index{Commander.DefaultHelp@{Commander.DefaultHelp}}
+
+
+Inheritance diagram for Commander.\+Default\+Help\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classCommander_1_1DefaultHelp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Commander.\+Default\+Help\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classCommander_1_1DefaultHelp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classCommander_1_1DefaultHelp_a21f05712c6eba0fa1ab76d0522b40b72}{Help}} ()
+\begin{DoxyCompactList}\small\item\em Generates help info for ourself, the help command. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCommander_1_1DefaultHelp_a8e939e5c2d53031281f5f0db0fd2af9d}{Help}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} program, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} cmd)
+\begin{DoxyCompactList}\small\item\em Generates help info for the given command. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCommander_1_1DefaultHelp_ad63f002e935793947f03cc3e4af8dc1e}{Help}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} program, \mbox{\hyperlink{classCommander_1_1Cog}{Cog}} cog)
+\begin{DoxyCompactList}\small\item\em Generates help info for the given cog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_1_1DefaultHelp_a21f05712c6eba0fa1ab76d0522b40b72}\label{classCommander_1_1DefaultHelp_a21f05712c6eba0fa1ab76d0522b40b72}} 
+\index{Commander.DefaultHelp@{Commander.DefaultHelp}!Help@{Help}}
+\index{Help@{Help}!Commander.DefaultHelp@{Commander.DefaultHelp}}
+\doxysubsubsection{\texorpdfstring{Help()}{Help()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual string Commander.\+Default\+Help.\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates help info for ourself, the help command. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the help information.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1DefaultHelp_ad63f002e935793947f03cc3e4af8dc1e}{Help(\+Commander.\+Program,\+Commander.\+Cog)}}, \mbox{\hyperlink{classCommander_1_1DefaultHelp_a8e939e5c2d53031281f5f0db0fd2af9d}{Help(\+Commander.\+Program,\+Commander.\+Command\+Obj)}}
+
+
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{interfaceCommander_1_1IHelp_a4261551d2503bfcd731a13fbffdca4dc}{Commander.\+I\+Help}}.
+
+\mbox{\Hypertarget{classCommander_1_1DefaultHelp_ad63f002e935793947f03cc3e4af8dc1e}\label{classCommander_1_1DefaultHelp_ad63f002e935793947f03cc3e4af8dc1e}} 
+\index{Commander.DefaultHelp@{Commander.DefaultHelp}!Help@{Help}}
+\index{Help@{Help}!Commander.DefaultHelp@{Commander.DefaultHelp}}
+\doxysubsubsection{\texorpdfstring{Help()}{Help()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily string Commander.\+Default\+Help.\+Help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{program,  }\item[{\mbox{\hyperlink{classCommander_1_1Cog}{Cog}}}]{cog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates help info for the given cog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & The program from which the help command is being run.\\
+\hline
+{\em cog} & The cog for which to generate the help info.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the help information.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1DefaultHelp_a21f05712c6eba0fa1ab76d0522b40b72}{Help()}}, \mbox{\hyperlink{classCommander_1_1DefaultHelp_a8e939e5c2d53031281f5f0db0fd2af9d}{Help(\+Commander.\+Program,\+Commander.\+Command\+Obj)}}
+
+
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{interfaceCommander_1_1IHelp_a8264d05577eeec243472c8fe06846f85}{Commander.\+I\+Help}}.
+
+\mbox{\Hypertarget{classCommander_1_1DefaultHelp_a8e939e5c2d53031281f5f0db0fd2af9d}\label{classCommander_1_1DefaultHelp_a8e939e5c2d53031281f5f0db0fd2af9d}} 
+\index{Commander.DefaultHelp@{Commander.DefaultHelp}!Help@{Help}}
+\index{Help@{Help}!Commander.DefaultHelp@{Commander.DefaultHelp}}
+\doxysubsubsection{\texorpdfstring{Help()}{Help()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily string Commander.\+Default\+Help.\+Help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{program,  }\item[{\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates help info for the given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & The program from which the help command is being run.\\
+\hline
+{\em cmd} & The command for which to generate the help info.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the help information.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1DefaultHelp_a21f05712c6eba0fa1ab76d0522b40b72}{Help()}}, \mbox{\hyperlink{classCommander_1_1DefaultHelp_ad63f002e935793947f03cc3e4af8dc1e}{Help(\+Commander.\+Program,\+Commander.\+Cog)}}
+
+
+\end{DoxySeeAlso}
+
+
+Implements \mbox{\hyperlink{interfaceCommander_1_1IHelp_a2f3911159bd74f8cbab475da6e46ce82}{Commander.\+I\+Help}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\mbox{\hyperlink{DefaultHelp_8cs}{Default\+Help.\+cs}}\end{DoxyCompactItemize}

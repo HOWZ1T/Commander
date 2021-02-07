@@ -1,0 +1,145 @@
+\hypertarget{classCommander_1_1Cog}{}\doxysection{Commander.\+Cog Class Reference}
+\label{classCommander_1_1Cog}\index{Commander.Cog@{Commander.Cog}}
+
+
+\mbox{\hyperlink{classCommander_1_1Cog}{Cog}} provides an class that encapsulates commands.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommander_1_1Cog_a7af703f2c3246d10d70ab0f737ed1d32}{Cog}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} prog)
+\item 
+\mbox{\hyperlink{classCommander_1_1Cog_a150c8a9524f12b171711a36ae230c906}{Cog}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} prog, string name=\char`\"{}\char`\"{}, string description=\char`\"{}\char`\"{})
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} \mbox{\hyperlink{classCommander_1_1Cog_a5fb5296cc86c7ca9b4ad35882801ccb7}{Get\+Command}} (string name)
+\begin{DoxyCompactList}\small\item\em Finds and returns a command based on the given name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Dictionary$<$ string, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} $>$ \mbox{\hyperlink{classCommander_1_1Cog_aaaf866f250c4cf870030944e3f75b8e4}{Commands}}
+\item 
+readonly string \mbox{\hyperlink{classCommander_1_1Cog_a78095297e075071a1aac95ae08af890a}{Description}}
+\item 
+readonly bool \mbox{\hyperlink{classCommander_1_1Cog_a5e2f037249c82a58f1604810ba157837}{Is\+Group}}
+\item 
+readonly string \mbox{\hyperlink{classCommander_1_1Cog_aaa0fff28ed6d18889056aa6c6d91b87f}{Name}}
+\item 
+bool \mbox{\hyperlink{classCommander_1_1Cog_a78716cb107c47cd5d7df0b0d6b9283b3}{Is\+Case\+Sensitive}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Package Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classCommander_1_1Cog_afa2346653c0722615fcbc1f3db0dbc02}{Execute}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} prog, string name, string\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Processes and executes the given input based on the command name and argument list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCommander_1_1Cog}{Cog}} provides an class that encapsulates commands. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommander_1_1Cog_a7af703f2c3246d10d70ab0f737ed1d32}\label{classCommander_1_1Cog_a7af703f2c3246d10d70ab0f737ed1d32}} 
+\index{Commander.Cog@{Commander.Cog}!Cog@{Cog}}
+\index{Cog@{Cog}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{Cog()}{Cog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Commander.\+Cog.\+Cog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{prog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1Cog_a150c8a9524f12b171711a36ae230c906}\label{classCommander_1_1Cog_a150c8a9524f12b171711a36ae230c906}} 
+\index{Commander.Cog@{Commander.Cog}!Cog@{Cog}}
+\index{Cog@{Cog}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{Cog()}{Cog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Commander.\+Cog.\+Cog (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{prog,  }\item[{string}]{name = {\ttfamily \char`\"{}\char`\"{}},  }\item[{string}]{description = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_1_1Cog_afa2346653c0722615fcbc1f3db0dbc02}\label{classCommander_1_1Cog_afa2346653c0722615fcbc1f3db0dbc02}} 
+\index{Commander.Cog@{Commander.Cog}!Execute@{Execute}}
+\index{Execute@{Execute}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily string Commander.\+Cog.\+Execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{prog,  }\item[{string}]{name,  }\item[{string\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [package]}}
+
+
+
+Processes and executes the given input based on the command name and argument list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & The program that this cog belongs to.\\
+\hline
+{\em name} & The name of the first specified command from the arguments.\\
+\hline
+{\em args} & The rest of the arguments to pass along to the command, includes subcommands.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the result of the execution.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Cog\+Error} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1CommandObj_ae65e751928b8464c22e5bace6e4cea02}{Command\+Obj.\+Invoke}}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classCommander_1_1Cog_a5fb5296cc86c7ca9b4ad35882801ccb7}\label{classCommander_1_1Cog_a5fb5296cc86c7ca9b4ad35882801ccb7}} 
+\index{Commander.Cog@{Commander.Cog}!GetCommand@{GetCommand}}
+\index{GetCommand@{GetCommand}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{GetCommand()}{GetCommand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} Commander.\+Cog.\+Get\+Command (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds and returns a command based on the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the command to find.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The command if found otherwise null
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommander_1_1Cog_aaaf866f250c4cf870030944e3f75b8e4}\label{classCommander_1_1Cog_aaaf866f250c4cf870030944e3f75b8e4}} 
+\index{Commander.Cog@{Commander.Cog}!Commands@{Commands}}
+\index{Commands@{Commands}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{Commands}{Commands}}
+{\footnotesize\ttfamily readonly Dictionary$<$string, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}$>$ Commander.\+Cog.\+Commands}
+
+\mbox{\Hypertarget{classCommander_1_1Cog_a78095297e075071a1aac95ae08af890a}\label{classCommander_1_1Cog_a78095297e075071a1aac95ae08af890a}} 
+\index{Commander.Cog@{Commander.Cog}!Description@{Description}}
+\index{Description@{Description}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily readonly string Commander.\+Cog.\+Description}
+
+\mbox{\Hypertarget{classCommander_1_1Cog_a78716cb107c47cd5d7df0b0d6b9283b3}\label{classCommander_1_1Cog_a78716cb107c47cd5d7df0b0d6b9283b3}} 
+\index{Commander.Cog@{Commander.Cog}!IsCaseSensitive@{IsCaseSensitive}}
+\index{IsCaseSensitive@{IsCaseSensitive}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{IsCaseSensitive}{IsCaseSensitive}}
+{\footnotesize\ttfamily bool Commander.\+Cog.\+Is\+Case\+Sensitive}
+
+\mbox{\Hypertarget{classCommander_1_1Cog_a5e2f037249c82a58f1604810ba157837}\label{classCommander_1_1Cog_a5e2f037249c82a58f1604810ba157837}} 
+\index{Commander.Cog@{Commander.Cog}!IsGroup@{IsGroup}}
+\index{IsGroup@{IsGroup}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{IsGroup}{IsGroup}}
+{\footnotesize\ttfamily readonly bool Commander.\+Cog.\+Is\+Group}
+
+\mbox{\Hypertarget{classCommander_1_1Cog_aaa0fff28ed6d18889056aa6c6d91b87f}\label{classCommander_1_1Cog_aaa0fff28ed6d18889056aa6c6d91b87f}} 
+\index{Commander.Cog@{Commander.Cog}!Name@{Name}}
+\index{Name@{Name}!Commander.Cog@{Commander.Cog}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily readonly string Commander.\+Cog.\+Name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\mbox{\hyperlink{Cog_8cs}{Cog.\+cs}}\end{DoxyCompactItemize}

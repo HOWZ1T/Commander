@@ -1,0 +1,108 @@
+ 
+\begin{DoxyImageNoCaption}
+  \mbox{\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{construction-resized.jpeg}}
+\end{DoxyImageNoCaption}
+  \hypertarget{index_autotoc_md0}{}\doxysection{Commander}\label{index_autotoc_md0}
+\mbox{\hyperlink{namespaceCommander}{Commander}} is a simple, extensible, and configurable command framework for C\# developers.
+
+It\textquotesingle{}s based on a simple idea of giving string input to the program and returning a string containing the result of the execution of the command based on the input.\hypertarget{index_autotoc_md1}{}\doxysection{Features}\label{index_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Automatic command naming based on method name (overridable by attribute).
+\item Automatic conversion and piping of string input to relevant data type(s) based on the command\textquotesingle{}s method parameter.
+\item Automatic usage example generation.
+\item Automatic command documentation based on method attributes and the method itself.
+\item Automatic input splitting based on whitespace, preserves single and double quoted strings.
+\item Automatic command dispatching.
+\item Includes a default help command.
+\item Add custom parameter convertors.
+\item Add custom input splitters.
+\item Add custom help command.
+\item Detailed command documentation with special character sequences.
+\item Command groups and nestable commands.
+\item Required and optional command parameters, with optional parameters having default value(s).
+\item Organizational unit \textquotesingle{}Cog\textquotesingle{} which is a class that contains commands and it can optionally group commands together.
+\item Dead simple execution through the program Run method.
+\item Error handling.
+\end{DoxyItemize}\hypertarget{index_autotoc_md2}{}\doxysection{Installation}\label{index_autotoc_md2}
+T\+O\+DO\hypertarget{index_autotoc_md3}{}\doxysection{Documentation}\label{index_autotoc_md3}
+T\+O\+DO
+
+\href{./documentation/html/index.html}{\texttt{ Generated Code Docs}}\hypertarget{index_autotoc_md4}{}\doxysection{Applications}\label{index_autotoc_md4}
+\mbox{\hyperlink{namespaceCommander}{Commander}} can be used to implement command systems for games, command line tools, chat bots etc.
+
+It accomplishes this goal by enforcing the input of a command string to the program and forcing all commands to return a string containing the result of the commands\textquotesingle{} execution.\hypertarget{index_autotoc_md5}{}\doxysection{Quickstart}\label{index_autotoc_md5}
+Below is a simple example of how to use this framework. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{/* ExampleCog.cs */}
+\DoxyCodeLine{using Commander;}
+\DoxyCodeLine{}
+\DoxyCodeLine{namespace Quickstart \{}
+\DoxyCodeLine{    public class ExampleCog : Commander.Cog \{}
+\DoxyCodeLine{        public ExampleCog(Program program) : base(program) \{}
+\DoxyCodeLine{            /* SETUP CODE HERE */}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        [Commander.Command(Description="Repeats the given message.")]}
+\DoxyCodeLine{        [Commander.Example("@c hello")]}
+\DoxyCodeLine{        [Commander.Example("@c 'hello world!'")]}
+\DoxyCodeLine{        public string Echo(string message) \{}
+\DoxyCodeLine{            return message;}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        [Commander.Command(Description="Adds numbers together.")]}
+\DoxyCodeLine{        [Commander.Example("@c 10")]}
+\DoxyCodeLine{        [Commander.Example("@c 5 16")]}
+\DoxyCodeLine{        public string Add(int a, int b = 10) \{}
+\DoxyCodeLine{            return (a + b).ToString();}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \{c\#\}}
+\DoxyCodeLine{/* ExampleProgram.cs */}
+\DoxyCodeLine{using Commander;}
+\DoxyCodeLine{}
+\DoxyCodeLine{namespace Quickstart \{}
+\DoxyCodeLine{    public class ExampleProgram : Commander.Program}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        public ExampleProgram() : base("ExampleProgram")}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            /* SETUP CODE HERE */}
+\DoxyCodeLine{            }
+\DoxyCodeLine{            Register(new ExampleCog(this));}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        }
+\DoxyCodeLine{        public static void Main(string[] args) \{}
+\DoxyCodeLine{            var program = new ExampleProgram();}
+\DoxyCodeLine{            Console.WriteLn(program.Run("ExampleProgram echo 'hello world!'"));}
+\DoxyCodeLine{            Console.WriteLn(program.Run("ExampleProgram add 400 20"));}
+\DoxyCodeLine{            Console.WriteLn(program.Run("ExampleProgram help"));}
+\DoxyCodeLine{            Console.WriteLn(program.Run("ExampleProgram help add"));}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysection{Examples}\label{index_autotoc_md6}
+T\+O\+DO\hypertarget{index_autotoc_md7}{}\doxyparagraph{T\+O\+DO}\label{index_autotoc_md7}
+
+\begin{DoxyItemize}
+\item \sout{\mbox{[} \mbox{]} Finish Unit tests.}
+\item \sout{\mbox{[} \mbox{]} Add flag parser.}
+\item \mbox{[}x\mbox{]} Add argument preprocessor for commands ala discordpy ? E.\+g.\+: my\+Func(string arg1, int arg2)
+\item \mbox{[}x\mbox{]} Add code comments
+\item \mbox{[}x\mbox{]} Complete unit tests (current\+: 85\% Coverage)
+\item \mbox{[}x\mbox{]} Add code docs
+\item \mbox{[} \mbox{]} Add examples
+\item \mbox{[} \mbox{]} Prettify \mbox{\hyperlink{README_8md}{R\+E\+A\+D\+M\+E.\+md}}
+\item \mbox{[}x\mbox{]} Add command usage info generation from metadata
+\item \mbox{[}x\mbox{]} Add special sequence parser
+\item \mbox{[}x\mbox{]} Add input splitter to program
+\item \mbox{[}x\mbox{]} Add default help command
+\item \sout{This all could have gone in a project right?} 
+\end{DoxyItemize}

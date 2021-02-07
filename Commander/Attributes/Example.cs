@@ -3,7 +3,7 @@ using System;
 namespace Commander.Attributes
 {
     /// <summary>
-    /// Example attribute for generating example strings for the method it applies to.
+    ///     Example attribute for generating example strings for the method it applies to.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class Example : Attribute
@@ -12,7 +12,7 @@ namespace Commander.Attributes
 
         public Example(string example)
         {
-            this.Val = example;
+            Val = example;
         }
     }
 }

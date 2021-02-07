@@ -1,0 +1,250 @@
+\hypertarget{classCommander_1_1CommandObj}{}\doxysection{Commander.\+Command\+Obj Class Reference}
+\label{classCommander_1_1CommandObj}\index{Commander.CommandObj@{Commander.CommandObj}}
+
+
+A internal representation of a command method.  
+
+
+
+
+Collaboration diagram for Commander.\+Command\+Obj\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classCommander_1_1CommandObj__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj_a7776a1136c073719cd6bddf36ab62533}{Command\+Obj}} (object cog, Method\+Info method\+Info, bool invokable, string name, string description, string\mbox{[}$\,$\mbox{]} examples)
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj_ac209af22eff8de66a328141703831851}{Command\+Obj}} (object cog, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} parent, Method\+Info method\+Info, bool invokable, string name, string description, string\mbox{[}$\,$\mbox{]} examples)
+\item 
+bool \mbox{\hyperlink{classCommander_1_1CommandObj_af0e3f084bad32bc6d4c25ba9e4c6210b}{Has\+Parent}} ()
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} \mbox{\hyperlink{classCommander_1_1CommandObj_a652b26cf3174802e258d9a470f58cef3}{Get\+Parent}} ()
+\item 
+void \mbox{\hyperlink{classCommander_1_1CommandObj_a34b4a4b2431c5d6fb150f069fa4b420d}{Add\+Child}} (\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} cmd)
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} \mbox{\hyperlink{classCommander_1_1CommandObj_a83e0f987a7b8980b1da122bcd6937c2d}{Get\+Child}} (string name)
+\item 
+bool \mbox{\hyperlink{classCommander_1_1CommandObj_a716d3d09ccc3895499833513dba7ee64}{Has\+Child}} (string name)
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classCommander_1_1CommandObj_ab1f14b6fb0376a1646a52810faafe895}{All\+Children}} ()
+\item 
+string \mbox{\hyperlink{classCommander_1_1CommandObj_a78c5e8413c5a4306785eb5ce2b5c9b89}{Usage}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} program)
+\begin{DoxyCompactList}\small\item\em Generates the usage string for this command. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCommander_1_1CommandObj_ae65e751928b8464c22e5bace6e4cea02}{Invoke}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} prog, string\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Executes the command based on the given arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classCommander_1_1CommandObj_af99d84a3040aa98770f25709c6ac4ece}{Call\+String}} (\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} cmd)
+\begin{DoxyCompactList}\small\item\em Generates the call string for the given command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly object \mbox{\hyperlink{classCommander_1_1CommandObj_a25ede7581c80987ac2da5e248cee9744}{\+\_\+cog}}
+\item 
+readonly bool \mbox{\hyperlink{classCommander_1_1CommandObj_aa9be6592d5d411d6938323efc40a7a22}{Invokable}}
+\item 
+readonly string \mbox{\hyperlink{classCommander_1_1CommandObj_a352c62a552a08465dfbea705e7cb2f0e}{Name}}
+\item 
+string \mbox{\hyperlink{classCommander_1_1CommandObj_a3862d888aa26f1aec99d4b0c43e02faa}{Description}}
+\item 
+string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classCommander_1_1CommandObj_a557ac5de0506c6cdd4d36c6f9e9d3075}{Examples}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Dictionary$<$ string, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} $>$ \mbox{\hyperlink{classCommander_1_1CommandObj_a858d5971beed59303789e38248574dc7}{Children}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Method\+Info \mbox{\hyperlink{classCommander_1_1CommandObj_a9b6830ed0f0db7f38ed0746560048049}{\+\_\+method\+Info}}
+\item 
+\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} \mbox{\hyperlink{classCommander_1_1CommandObj_a5c1bbfb7b1cb294d08c6fc0eafc9994b}{\+\_\+parent}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A internal representation of a command method. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a7776a1136c073719cd6bddf36ab62533}\label{classCommander_1_1CommandObj_a7776a1136c073719cd6bddf36ab62533}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!CommandObj@{CommandObj}}
+\index{CommandObj@{CommandObj}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{CommandObj()}{CommandObj()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Commander.\+Command\+Obj.\+Command\+Obj (\begin{DoxyParamCaption}\item[{object}]{cog,  }\item[{Method\+Info}]{method\+Info,  }\item[{bool}]{invokable,  }\item[{string}]{name,  }\item[{string}]{description,  }\item[{string\mbox{[}$\,$\mbox{]}}]{examples }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_ac209af22eff8de66a328141703831851}\label{classCommander_1_1CommandObj_ac209af22eff8de66a328141703831851}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!CommandObj@{CommandObj}}
+\index{CommandObj@{CommandObj}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{CommandObj()}{CommandObj()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Commander.\+Command\+Obj.\+Command\+Obj (\begin{DoxyParamCaption}\item[{object}]{cog,  }\item[{\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}}]{parent,  }\item[{Method\+Info}]{method\+Info,  }\item[{bool}]{invokable,  }\item[{string}]{name,  }\item[{string}]{description,  }\item[{string\mbox{[}$\,$\mbox{]}}]{examples }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a34b4a4b2431c5d6fb150f069fa4b420d}\label{classCommander_1_1CommandObj_a34b4a4b2431c5d6fb150f069fa4b420d}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!AddChild@{AddChild}}
+\index{AddChild@{AddChild}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{AddChild()}{AddChild()}}
+{\footnotesize\ttfamily void Commander.\+Command\+Obj.\+Add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_ab1f14b6fb0376a1646a52810faafe895}\label{classCommander_1_1CommandObj_ab1f14b6fb0376a1646a52810faafe895}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!AllChildren@{AllChildren}}
+\index{AllChildren@{AllChildren}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{AllChildren()}{AllChildren()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} \mbox{[}$\,$\mbox{]} Commander.\+Command\+Obj.\+All\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_af99d84a3040aa98770f25709c6ac4ece}\label{classCommander_1_1CommandObj_af99d84a3040aa98770f25709c6ac4ece}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!CallString@{CallString}}
+\index{CallString@{CallString}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{CallString()}{CallString()}}
+{\footnotesize\ttfamily static string Commander.\+Command\+Obj.\+Call\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generates the call string for the given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & The command for which to generate the call string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The call string for the given command.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a83e0f987a7b8980b1da122bcd6937c2d}\label{classCommander_1_1CommandObj_a83e0f987a7b8980b1da122bcd6937c2d}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!GetChild@{GetChild}}
+\index{GetChild@{GetChild}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{GetChild()}{GetChild()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} Commander.\+Command\+Obj.\+Get\+Child (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a652b26cf3174802e258d9a470f58cef3}\label{classCommander_1_1CommandObj_a652b26cf3174802e258d9a470f58cef3}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!GetParent@{GetParent}}
+\index{GetParent@{GetParent}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{GetParent()}{GetParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} Commander.\+Command\+Obj.\+Get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a716d3d09ccc3895499833513dba7ee64}\label{classCommander_1_1CommandObj_a716d3d09ccc3895499833513dba7ee64}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!HasChild@{HasChild}}
+\index{HasChild@{HasChild}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{HasChild()}{HasChild()}}
+{\footnotesize\ttfamily bool Commander.\+Command\+Obj.\+Has\+Child (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_af0e3f084bad32bc6d4c25ba9e4c6210b}\label{classCommander_1_1CommandObj_af0e3f084bad32bc6d4c25ba9e4c6210b}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!HasParent@{HasParent}}
+\index{HasParent@{HasParent}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{HasParent()}{HasParent()}}
+{\footnotesize\ttfamily bool Commander.\+Command\+Obj.\+Has\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_ae65e751928b8464c22e5bace6e4cea02}\label{classCommander_1_1CommandObj_ae65e751928b8464c22e5bace6e4cea02}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Invoke@{Invoke}}
+\index{Invoke@{Invoke}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Invoke()}{Invoke()}}
+{\footnotesize\ttfamily string Commander.\+Command\+Obj.\+Invoke (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{prog,  }\item[{string\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Executes the command based on the given arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & The program this command belong to.\\
+\hline
+{\em args} & The arguments to be passed to the command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the result of the execution of the command.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Command\+Error} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1Cog_afa2346653c0722615fcbc1f3db0dbc02}{Cog.\+Execute}}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a78c5e8413c5a4306785eb5ce2b5c9b89}\label{classCommander_1_1CommandObj_a78c5e8413c5a4306785eb5ce2b5c9b89}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Usage@{Usage}}
+\index{Usage@{Usage}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Usage()}{Usage()}}
+{\footnotesize\ttfamily string Commander.\+Command\+Obj.\+Usage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates the usage string for this command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em program} & The program this command belongs to.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The usage string for this command.
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a25ede7581c80987ac2da5e248cee9744}\label{classCommander_1_1CommandObj_a25ede7581c80987ac2da5e248cee9744}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!\_cog@{\_cog}}
+\index{\_cog@{\_cog}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{\_cog}{\_cog}}
+{\footnotesize\ttfamily readonly object Commander.\+Command\+Obj.\+\_\+cog}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a9b6830ed0f0db7f38ed0746560048049}\label{classCommander_1_1CommandObj_a9b6830ed0f0db7f38ed0746560048049}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!\_methodInfo@{\_methodInfo}}
+\index{\_methodInfo@{\_methodInfo}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{\_methodInfo}{\_methodInfo}}
+{\footnotesize\ttfamily readonly Method\+Info Commander.\+Command\+Obj.\+\_\+method\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a5c1bbfb7b1cb294d08c6fc0eafc9994b}\label{classCommander_1_1CommandObj_a5c1bbfb7b1cb294d08c6fc0eafc9994b}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!\_parent@{\_parent}}
+\index{\_parent@{\_parent}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{\_parent}{\_parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} Commander.\+Command\+Obj.\+\_\+parent\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a858d5971beed59303789e38248574dc7}\label{classCommander_1_1CommandObj_a858d5971beed59303789e38248574dc7}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Children@{Children}}
+\index{Children@{Children}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Children}{Children}}
+{\footnotesize\ttfamily Dictionary$<$string, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}$>$ Commander.\+Command\+Obj.\+Children\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a3862d888aa26f1aec99d4b0c43e02faa}\label{classCommander_1_1CommandObj_a3862d888aa26f1aec99d4b0c43e02faa}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Description@{Description}}
+\index{Description@{Description}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Description}{Description}}
+{\footnotesize\ttfamily string Commander.\+Command\+Obj.\+Description}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a557ac5de0506c6cdd4d36c6f9e9d3075}\label{classCommander_1_1CommandObj_a557ac5de0506c6cdd4d36c6f9e9d3075}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Examples@{Examples}}
+\index{Examples@{Examples}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Examples}{Examples}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} Commander.\+Command\+Obj.\+Examples}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_aa9be6592d5d411d6938323efc40a7a22}\label{classCommander_1_1CommandObj_aa9be6592d5d411d6938323efc40a7a22}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Invokable@{Invokable}}
+\index{Invokable@{Invokable}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Invokable}{Invokable}}
+{\footnotesize\ttfamily readonly bool Commander.\+Command\+Obj.\+Invokable}
+
+\mbox{\Hypertarget{classCommander_1_1CommandObj_a352c62a552a08465dfbea705e7cb2f0e}\label{classCommander_1_1CommandObj_a352c62a552a08465dfbea705e7cb2f0e}} 
+\index{Commander.CommandObj@{Commander.CommandObj}!Name@{Name}}
+\index{Name@{Name}!Commander.CommandObj@{Commander.CommandObj}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily readonly string Commander.\+Command\+Obj.\+Name}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\mbox{\hyperlink{CommandObj_8cs}{Command\+Obj.\+cs}}\end{DoxyCompactItemize}

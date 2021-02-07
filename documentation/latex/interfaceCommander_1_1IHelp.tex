@@ -1,0 +1,123 @@
+\hypertarget{interfaceCommander_1_1IHelp}{}\doxysection{Commander.\+I\+Help Interface Reference}
+\label{interfaceCommander_1_1IHelp}\index{Commander.IHelp@{Commander.IHelp}}
+
+
+Inheritance diagram for Commander.\+I\+Help\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{interfaceCommander_1_1IHelp__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{interfaceCommander_1_1IHelp_a4261551d2503bfcd731a13fbffdca4dc}{Help}} ()
+\begin{DoxyCompactList}\small\item\em Generates help info for ourself, the help command. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{interfaceCommander_1_1IHelp_a2f3911159bd74f8cbab475da6e46ce82}{Help}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} prog, \mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}} cmd)
+\begin{DoxyCompactList}\small\item\em Generates help info for the given command. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{interfaceCommander_1_1IHelp_a8264d05577eeec243472c8fe06846f85}{Help}} (\mbox{\hyperlink{classCommander_1_1Program}{Program}} prog, \mbox{\hyperlink{classCommander_1_1Cog}{Cog}} cog)
+\begin{DoxyCompactList}\small\item\em Generates help info for the given cog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interfaceCommander_1_1IHelp_a4261551d2503bfcd731a13fbffdca4dc}\label{interfaceCommander_1_1IHelp_a4261551d2503bfcd731a13fbffdca4dc}} 
+\index{Commander.IHelp@{Commander.IHelp}!Help@{Help}}
+\index{Help@{Help}!Commander.IHelp@{Commander.IHelp}}
+\doxysubsubsection{\texorpdfstring{Help()}{Help()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual string Commander.\+I\+Help.\+Help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates help info for ourself, the help command. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the help information.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{interfaceCommander_1_1IHelp_a8264d05577eeec243472c8fe06846f85}{Help(\+Commander.\+Program,\+Commander.\+Cog)}}, \mbox{\hyperlink{interfaceCommander_1_1IHelp_a2f3911159bd74f8cbab475da6e46ce82}{Help(\+Commander.\+Program,\+Commander.\+Command\+Obj)}}
+
+
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classCommander_1_1DefaultHelp_a21f05712c6eba0fa1ab76d0522b40b72}{Commander.\+Default\+Help}}.
+
+\mbox{\Hypertarget{interfaceCommander_1_1IHelp_a8264d05577eeec243472c8fe06846f85}\label{interfaceCommander_1_1IHelp_a8264d05577eeec243472c8fe06846f85}} 
+\index{Commander.IHelp@{Commander.IHelp}!Help@{Help}}
+\index{Help@{Help}!Commander.IHelp@{Commander.IHelp}}
+\doxysubsubsection{\texorpdfstring{Help()}{Help()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual string Commander.\+I\+Help.\+Help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{prog,  }\item[{\mbox{\hyperlink{classCommander_1_1Cog}{Cog}}}]{cog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates help info for the given cog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & The program from which the help command is being run.\\
+\hline
+{\em cog} & The cog for which to generate the help info.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the help information.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{interfaceCommander_1_1IHelp_a4261551d2503bfcd731a13fbffdca4dc}{Help()}}, \mbox{\hyperlink{interfaceCommander_1_1IHelp_a2f3911159bd74f8cbab475da6e46ce82}{Help(\+Commander.\+Program,\+Commander.\+Command\+Obj)}}
+
+
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classCommander_1_1DefaultHelp_ad63f002e935793947f03cc3e4af8dc1e}{Commander.\+Default\+Help}}.
+
+\mbox{\Hypertarget{interfaceCommander_1_1IHelp_a2f3911159bd74f8cbab475da6e46ce82}\label{interfaceCommander_1_1IHelp_a2f3911159bd74f8cbab475da6e46ce82}} 
+\index{Commander.IHelp@{Commander.IHelp}!Help@{Help}}
+\index{Help@{Help}!Commander.IHelp@{Commander.IHelp}}
+\doxysubsubsection{\texorpdfstring{Help()}{Help()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual string Commander.\+I\+Help.\+Help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Program}{Program}}}]{prog,  }\item[{\mbox{\hyperlink{classCommander_1_1CommandObj}{Command\+Obj}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Generates help info for the given command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prog} & The program from which the help command is being run.\\
+\hline
+{\em cmd} & The command for which to generate the help info.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the help information.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{interfaceCommander_1_1IHelp_a4261551d2503bfcd731a13fbffdca4dc}{Help()}}, \mbox{\hyperlink{interfaceCommander_1_1IHelp_a8264d05577eeec243472c8fe06846f85}{Help(\+Commander.\+Program,\+Commander.\+Cog)}}
+
+
+\end{DoxySeeAlso}
+
+
+Implemented in \mbox{\hyperlink{classCommander_1_1DefaultHelp_a8e939e5c2d53031281f5f0db0fd2af9d}{Commander.\+Default\+Help}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\mbox{\hyperlink{IHelp_8cs}{I\+Help.\+cs}}\end{DoxyCompactItemize}

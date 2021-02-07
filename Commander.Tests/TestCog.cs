@@ -1,21 +1,24 @@
+using System.Net.NetworkInformation;
 using Commander.Attributes;
 
 namespace Commander.Tests
 {
     [CommandGroup("test", Description = "yeah yeah")]
-    public class TestCog : Commander.Cog
+    public class TestCog : Cog
     {
-        public TestCog(Program prog) : base(prog) { }
+        public TestCog(Program prog) : base(prog)
+        {
+        }
 
         [Command(Name = "pinger", Description = "pings a website")]
         [Example("@c https://www.google.com")]
         public string Ping(string url)
         {
-            var ping = new System.Net.NetworkInformation.Ping();
+            var ping = new Ping();
             var result = ping.Send(url);
-            return result.RoundtripTime.ToString() + " ms";
+            return result.RoundtripTime + " ms";
         }
-        
+
         [Command(Parent = "pinger")]
         [Example("@c 'hello there'")]
         [Example("@c 'general kenobi'")]
@@ -24,7 +27,7 @@ namespace Commander.Tests
             return message;
         }
 
-        [Command()]
+        [Command]
         public string Say(string message = "Hello World")
         {
             return $"{Name} says: \"{message}\"";

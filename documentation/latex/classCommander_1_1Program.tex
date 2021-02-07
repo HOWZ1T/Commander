@@ -1,0 +1,284 @@
+\hypertarget{classCommander_1_1Program}{}\doxysection{Commander.\+Program Class Reference}
+\label{classCommander_1_1Program}\index{Commander.Program@{Commander.Program}}
+
+
+\mbox{\hyperlink{classCommander_1_1Program}{Program}} provides a class that encapsulates cogs and provides the ability to process a given command string.  
+
+
+
+
+Collaboration diagram for Commander.\+Program\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classCommander_1_1Program__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommander_1_1Program_aaad2eee5d604d33439376fb5bc99790b}{Program}} (string name, bool is\+Case\+Sensitive=false, bool use\+Program\+Name\+Prefix=true)
+\item 
+void \mbox{\hyperlink{classCommander_1_1Program_a6334384ec8a090fa5959e4450a70c0c2}{Register}} (\mbox{\hyperlink{classCommander_1_1Cog}{Cog}} cog)
+\begin{DoxyCompactList}\small\item\em Adds the given cog to the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCommander_1_1Program_a06f6dbacb605071b5369021a22ad9e97}{Deregister}} (\mbox{\hyperlink{classCommander_1_1Cog}{Cog}} cog)
+\begin{DoxyCompactList}\small\item\em Removes the given cog from the program. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommander_1_1Cog}{Cog}} \mbox{\hyperlink{classCommander_1_1Program_a90c89ef8b69ec0fed15aff823d00adcd}{Get\+Cog}} (string name)
+\begin{DoxyCompactList}\small\item\em Finds and returns a cog based on the given name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCommander_1_1Program_ad4bc4dbd952d7b87a196b6cb780800d5}{Has\+Cog}} (string name)
+\begin{DoxyCompactList}\small\item\em Determines whether or not a cog with the given name exists within the program. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCommander_1_1Cog}{Cog}}\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classCommander_1_1Program_aae94024e3c935e0244669b56215fc2c3}{All\+Cogs}} ()
+\item 
+void \mbox{\hyperlink{classCommander_1_1Program_ae6ee3215b359d494e3ea5a43382ef678}{Add\+Convertor}} (Type typ, \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}} convertor)
+\item 
+\mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}} \mbox{\hyperlink{classCommander_1_1Program_a545eed4d3a051ddec518b6a2e142b848}{Get\+Convertor}} (Type typ)
+\item 
+string \mbox{\hyperlink{classCommander_1_1Program_a62876da48f11cea25c06f07a99498297}{Run}} (string\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Processes and executes the program based on the input arguments. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classCommander_1_1Program_a96206fbcc17881ab7535734416ccd1ae}{Run}} (string str)
+\begin{DoxyCompactList}\small\item\em Processes and executes the program based on the input argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly bool \mbox{\hyperlink{classCommander_1_1Program_aea9ebf7b97a95abbbb2c0b0ea80d894e}{Is\+Case\+Sensitive}}
+\item 
+readonly string \mbox{\hyperlink{classCommander_1_1Program_aee8171bdf52073d4d789cd1d23f2307c}{Name}}
+\item 
+readonly bool \mbox{\hyperlink{classCommander_1_1Program_a52d73e31d997c2309461ea6512843cd5}{Use\+Program\+Name\+Prefix}}
+\item 
+\mbox{\hyperlink{interfaceCommander_1_1IHelp}{I\+Help}} \mbox{\hyperlink{classCommander_1_1Program_a50c36eb40c828ba4599e5ead0e268c9c}{Help}}
+\item 
+\mbox{\hyperlink{interfaceCommander_1_1ISplitter}{I\+Splitter}} \mbox{\hyperlink{classCommander_1_1Program_a26713290f8e6eec877b8eab82f2d7e76}{Splitter}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classCommander_1_1Program_afad66f250bcbaf0279393c854fce17b1}{Dispatch\+Command}} (string\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Processes the arguments and dispatches the input to the appropriate cog/command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly Dictionary$<$ string, \mbox{\hyperlink{classCommander_1_1Cog}{Cog}} $>$ \mbox{\hyperlink{classCommander_1_1Program_a736571c90ff80d46c2722fae5f23b538}{\+\_\+cogs}}
+\item 
+readonly Dictionary$<$ Type, \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}} $>$ \mbox{\hyperlink{classCommander_1_1Program_afecb13a6187fbb67c3aee79aa8b43db8}{\+\_\+convertors}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCommander_1_1Program}{Program}} provides a class that encapsulates cogs and provides the ability to process a given command string. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommander_1_1Program_aaad2eee5d604d33439376fb5bc99790b}\label{classCommander_1_1Program_aaad2eee5d604d33439376fb5bc99790b}} 
+\index{Commander.Program@{Commander.Program}!Program@{Program}}
+\index{Program@{Program}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Program()}{Program()}}
+{\footnotesize\ttfamily Commander.\+Program.\+Program (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{bool}]{is\+Case\+Sensitive = {\ttfamily false},  }\item[{bool}]{use\+Program\+Name\+Prefix = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_1_1Program_ae6ee3215b359d494e3ea5a43382ef678}\label{classCommander_1_1Program_ae6ee3215b359d494e3ea5a43382ef678}} 
+\index{Commander.Program@{Commander.Program}!AddConvertor@{AddConvertor}}
+\index{AddConvertor@{AddConvertor}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{AddConvertor()}{AddConvertor()}}
+{\footnotesize\ttfamily void Commander.\+Program.\+Add\+Convertor (\begin{DoxyParamCaption}\item[{Type}]{typ,  }\item[{\mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}}}]{convertor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1Program_aae94024e3c935e0244669b56215fc2c3}\label{classCommander_1_1Program_aae94024e3c935e0244669b56215fc2c3}} 
+\index{Commander.Program@{Commander.Program}!AllCogs@{AllCogs}}
+\index{AllCogs@{AllCogs}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{AllCogs()}{AllCogs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1Cog}{Cog}} \mbox{[}$\,$\mbox{]} Commander.\+Program.\+All\+Cogs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1Program_a06f6dbacb605071b5369021a22ad9e97}\label{classCommander_1_1Program_a06f6dbacb605071b5369021a22ad9e97}} 
+\index{Commander.Program@{Commander.Program}!Deregister@{Deregister}}
+\index{Deregister@{Deregister}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Deregister()}{Deregister()}}
+{\footnotesize\ttfamily void Commander.\+Program.\+Deregister (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Cog}{Cog}}}]{cog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the given cog from the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cog} & The cog to remove from the program.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommander_1_1Program_afad66f250bcbaf0279393c854fce17b1}\label{classCommander_1_1Program_afad66f250bcbaf0279393c854fce17b1}} 
+\index{Commander.Program@{Commander.Program}!DispatchCommand@{DispatchCommand}}
+\index{DispatchCommand@{DispatchCommand}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{DispatchCommand()}{DispatchCommand()}}
+{\footnotesize\ttfamily string Commander.\+Program.\+Dispatch\+Command (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Processes the arguments and dispatches the input to the appropriate cog/command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The input arguments to the program.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the execution from the program based on the given input arguments.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Program\+Error} & \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classCommander_1_1Program_a90c89ef8b69ec0fed15aff823d00adcd}\label{classCommander_1_1Program_a90c89ef8b69ec0fed15aff823d00adcd}} 
+\index{Commander.Program@{Commander.Program}!GetCog@{GetCog}}
+\index{GetCog@{GetCog}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{GetCog()}{GetCog()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1Cog}{Cog}} Commander.\+Program.\+Get\+Cog (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Finds and returns a cog based on the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the cog to find.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \mbox{\hyperlink{classCommander_1_1Cog}{Cog}} if found, otherwise null
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommander_1_1Program_a545eed4d3a051ddec518b6a2e142b848}\label{classCommander_1_1Program_a545eed4d3a051ddec518b6a2e142b848}} 
+\index{Commander.Program@{Commander.Program}!GetConvertor@{GetConvertor}}
+\index{GetConvertor@{GetConvertor}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{GetConvertor()}{GetConvertor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}} Commander.\+Program.\+Get\+Convertor (\begin{DoxyParamCaption}\item[{Type}]{typ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classCommander_1_1Program_ad4bc4dbd952d7b87a196b6cb780800d5}\label{classCommander_1_1Program_ad4bc4dbd952d7b87a196b6cb780800d5}} 
+\index{Commander.Program@{Commander.Program}!HasCog@{HasCog}}
+\index{HasCog@{HasCog}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{HasCog()}{HasCog()}}
+{\footnotesize\ttfamily bool Commander.\+Program.\+Has\+Cog (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determines whether or not a cog with the given name exists within the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the cog.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool representing if the cog exists within the program.
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommander_1_1Program_a6334384ec8a090fa5959e4450a70c0c2}\label{classCommander_1_1Program_a6334384ec8a090fa5959e4450a70c0c2}} 
+\index{Commander.Program@{Commander.Program}!Register@{Register}}
+\index{Register@{Register}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Register()}{Register()}}
+{\footnotesize\ttfamily void Commander.\+Program.\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommander_1_1Cog}{Cog}}}]{cog }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds the given cog to the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cog} & The cog to register in the program.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommander_1_1Program_a96206fbcc17881ab7535734416ccd1ae}\label{classCommander_1_1Program_a96206fbcc17881ab7535734416ccd1ae}} 
+\index{Commander.Program@{Commander.Program}!Run@{Run}}
+\index{Run@{Run}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily string Commander.\+Program.\+Run (\begin{DoxyParamCaption}\item[{string}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Processes and executes the program based on the input argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The input string to the program.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the execution from the program based on the given input string.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1Program_a62876da48f11cea25c06f07a99498297}{Run(string\mbox{[}$\,$\mbox{]})}}
+
+
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classCommander_1_1Program_a62876da48f11cea25c06f07a99498297}\label{classCommander_1_1Program_a62876da48f11cea25c06f07a99498297}} 
+\index{Commander.Program@{Commander.Program}!Run@{Run}}
+\index{Run@{Run}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily string Commander.\+Program.\+Run (\begin{DoxyParamCaption}\item[{string\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Processes and executes the program based on the input arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & The input arguments to the program.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of the execution from the program based on the given input arguments.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classCommander_1_1Program_a96206fbcc17881ab7535734416ccd1ae}{Run(string)}}
+
+
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommander_1_1Program_a736571c90ff80d46c2722fae5f23b538}\label{classCommander_1_1Program_a736571c90ff80d46c2722fae5f23b538}} 
+\index{Commander.Program@{Commander.Program}!\_cogs@{\_cogs}}
+\index{\_cogs@{\_cogs}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{\_cogs}{\_cogs}}
+{\footnotesize\ttfamily readonly Dictionary$<$string, \mbox{\hyperlink{classCommander_1_1Cog}{Cog}}$>$ Commander.\+Program.\+\_\+cogs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommander_1_1Program_afecb13a6187fbb67c3aee79aa8b43db8}\label{classCommander_1_1Program_afecb13a6187fbb67c3aee79aa8b43db8}} 
+\index{Commander.Program@{Commander.Program}!\_convertors@{\_convertors}}
+\index{\_convertors@{\_convertors}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{\_convertors}{\_convertors}}
+{\footnotesize\ttfamily readonly Dictionary$<$Type, \mbox{\hyperlink{classCommander_1_1Convertors_1_1Convertor}{Convertor}}$>$ Commander.\+Program.\+\_\+convertors\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommander_1_1Program_a50c36eb40c828ba4599e5ead0e268c9c}\label{classCommander_1_1Program_a50c36eb40c828ba4599e5ead0e268c9c}} 
+\index{Commander.Program@{Commander.Program}!Help@{Help}}
+\index{Help@{Help}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Help}{Help}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfaceCommander_1_1IHelp}{I\+Help}} Commander.\+Program.\+Help}
+
+\mbox{\Hypertarget{classCommander_1_1Program_aea9ebf7b97a95abbbb2c0b0ea80d894e}\label{classCommander_1_1Program_aea9ebf7b97a95abbbb2c0b0ea80d894e}} 
+\index{Commander.Program@{Commander.Program}!IsCaseSensitive@{IsCaseSensitive}}
+\index{IsCaseSensitive@{IsCaseSensitive}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{IsCaseSensitive}{IsCaseSensitive}}
+{\footnotesize\ttfamily readonly bool Commander.\+Program.\+Is\+Case\+Sensitive}
+
+\mbox{\Hypertarget{classCommander_1_1Program_aee8171bdf52073d4d789cd1d23f2307c}\label{classCommander_1_1Program_aee8171bdf52073d4d789cd1d23f2307c}} 
+\index{Commander.Program@{Commander.Program}!Name@{Name}}
+\index{Name@{Name}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily readonly string Commander.\+Program.\+Name}
+
+\mbox{\Hypertarget{classCommander_1_1Program_a26713290f8e6eec877b8eab82f2d7e76}\label{classCommander_1_1Program_a26713290f8e6eec877b8eab82f2d7e76}} 
+\index{Commander.Program@{Commander.Program}!Splitter@{Splitter}}
+\index{Splitter@{Splitter}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{Splitter}{Splitter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{interfaceCommander_1_1ISplitter}{I\+Splitter}} Commander.\+Program.\+Splitter}
+
+\mbox{\Hypertarget{classCommander_1_1Program_a52d73e31d997c2309461ea6512843cd5}\label{classCommander_1_1Program_a52d73e31d997c2309461ea6512843cd5}} 
+\index{Commander.Program@{Commander.Program}!UseProgramNamePrefix@{UseProgramNamePrefix}}
+\index{UseProgramNamePrefix@{UseProgramNamePrefix}!Commander.Program@{Commander.Program}}
+\doxysubsubsection{\texorpdfstring{UseProgramNamePrefix}{UseProgramNamePrefix}}
+{\footnotesize\ttfamily readonly bool Commander.\+Program.\+Use\+Program\+Name\+Prefix}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Commander/\mbox{\hyperlink{Program_8cs}{Program.\+cs}}\end{DoxyCompactItemize}

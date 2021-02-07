@@ -3,13 +3,13 @@ using System;
 namespace Commander.Convertors
 {
     /// <summary>
-    /// Convertor interface to specify the TryConvert methods.
+    ///     Convertor interface to specify the TryConvert methods.
     /// </summary>
     /// <typeparam name="T">Generic Type</typeparam>
     public interface IConvertor<T>
     {
         /// <summary>
-        /// Attempts to convert the given string value to the given type value.
+        ///     Attempts to convert the given string value to the given type value.
         /// </summary>
         /// <param name="typ">The type to convert to.</param>
         /// <param name="val">The string value to convert from.</param>
@@ -20,9 +20,9 @@ namespace Commander.Convertors
         {
             throw new NotImplementedException();
         }
-        
+
         /// <summary>
-        /// Attempts to convert the given string value to the generic type <code>T</code>.
+        ///     Attempts to convert the given string value to the generic type <code>T</code>.
         /// </summary>
         /// <param name="val">The string value to convert from.</param>
         /// <param name="res">The resulting value of the conversion.</param>

@@ -3,7 +3,7 @@ namespace Commander
     public class StringProcessor
     {
         /// <summary>
-        /// Replaces special sequences within the string with the relevant data.
+        ///     Replaces special sequences within the string with the relevant data.
         /// </summary>
         /// <param name="str"></param>
         /// <param name="program"></param>

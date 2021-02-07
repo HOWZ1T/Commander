@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interfaceCommander_1_1Convertors_1_1IConvertor.html" title=" " alt="" coords="5,5,253,47"/>
+<area shape="rect" id="node2" href="$classCommander_1_1Convertors_1_1Convertor.html" title="A generic implementation of the" alt="" coords="301,13,545,39"/>
+<area shape="rect" id="node3" href="$classCommander_1_1Convertors_1_1BooleanConvertor.html" title="An extension of the Convertor class to handle converting bool values." alt="" coords="593,5,827,47"/>
+</map>

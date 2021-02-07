@@ -3,7 +3,7 @@ using System;
 namespace Commander.Errors
 {
     /// <summary>
-    /// An Error class representing Command Errors.
+    ///     An Error class representing Command Errors.
     /// </summary>
     public class CommandError : Exception
     {
@@ -11,7 +11,7 @@ namespace Commander.Errors
 
         public CommandError(string msg, string callString) : base(msg)
         {
-            this.CallString = callString;
+            CallString = callString;
         }
     }
 }

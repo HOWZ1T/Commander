@@ -1,0 +1,10 @@
+language: csharp
+solution: Commander.sln
+
+install:
+  - nuget restore Commander.sln
+  - nuget install xunit.runners -Version 2.4.3 -OutputDirectory testrunner
+
+script:
+  - msbuild /p:Configuration=Release Commander.sln
+  - mono ./testrunner/xunit.runners.2.4.3/tools/xunit.console.clr4.exe ./Commander.Tests/bin/Release/Commander.Tests.dll
